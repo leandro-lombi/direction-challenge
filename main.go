@@ -7,11 +7,18 @@ import (
 )
 
 func main() {
-	list := []string{"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"}
-	result, err := directionReduce.DirReduc(list)
-	if err != nil {
-		fmt.Errorf("%s", err)
-	}
+
+	// list: ["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH","WEST"]
+	// result: ["WEST"]
+
+	// list: ["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"]
+	// result: []
+
+	// list: ["NORTH","WEST","SOUTH","EAST"]
+	// result: ["NORTH","WEST","SOUTH","EAST"]
+
+	list := []string{"NORTH", "WEST", "SOUTH", "EAST"}
+	result := directionReduce.DirReduc(list)
 
 	fmt.Println(result)
 }
